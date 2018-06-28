@@ -1,12 +1,7 @@
 ansible-haproxy-tls-termination
 =========
 
-This role will configure two haproxy nodes in an active-passive configuration on DigitalOcean Droplets. The provided TLS certificate will be configured on the haproxy nodes for TLS termination.
-
-Requirements
-------------
-
-A TLS certificate is required along with the private key in one file. Please use ansible-vault to keep your data safe.
+This role will configure two haproxy nodes in an active-passive configuration on DigitalOcean Droplets.
 
 Role Variables
 --------------
@@ -28,9 +23,6 @@ You can adjust the following two variables in defaults/main.yml
     timezone: "America/Los_Angeles"
     locale: "en_US.UTF-8"
 
-You'll also want to place your encrypted TLS certificate in **files/cert.pem**.
-
-
 Example usage
 ----------------
 
@@ -42,7 +34,7 @@ Once the role is installed you can set it up in your playbook.
 
     - hosts: load_balancer
       roles:
-          - { role: ansible-haproxy-tls-termination }
+          - { role: ansible-haproxy }
       become: True
 
 License
