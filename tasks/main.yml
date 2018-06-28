@@ -125,15 +125,6 @@
     group: root
     mode: 0700
 
-- name: Copy cert over
-  copy:
-    dest: /etc/haproxy/tls-certs/live/cert.pem
-    src: cert.pem
-    owner: root
-    group: root
-    mode: 0600
-    decrypt: Yes
-
 - name: configure haproxy service
   template:
     src: haproxy.cfg.j2

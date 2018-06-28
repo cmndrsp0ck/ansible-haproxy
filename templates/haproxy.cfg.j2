@@ -28,14 +28,7 @@ frontend http
         reqadd X-Forwarded-Proto:\ http
         default_backend app_pool
 
-frontend https
-        bind {{ ansible_eth0_2.ipv4.address }}:443 ssl crt /etc/haproxy/tls-certs/live/cert.pem alpn h2,http/1.1
-        backlog 16383
-        reqadd X-Forwarded-Proto:\ https
-        default_backend app_pool
-
 backend app_pool
-        redirect scheme https if !{ ssl_fc }
         balance roundrobin
         option httpchk HEAD / HTTP/1.1\r\nHost:\ www
         default-server port 80 inter 2s downinter 4s rise 3 fall 2 slowstart 60s weight 1
