@@ -1,4 +1,4 @@
-ansible-haproxy-tls-termination
+ansible-haproxy
 =========
 
 This role will configure two haproxy nodes in an active-passive configuration on DigitalOcean Droplets.

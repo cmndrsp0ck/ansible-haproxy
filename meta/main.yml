@@ -1,6 +1,6 @@
 galaxy_info:
   author: cmndrsp0ck
-  description: haproxy configured to use TLS and floating ip reassignment.
+  description: haproxy with floating ip reassignment.
   company: N/A
 
   license: GPL-3.0
